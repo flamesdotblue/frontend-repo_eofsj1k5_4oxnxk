@@ -3,17 +3,17 @@ import { motion } from 'framer-motion'
 
 export default function Hero() {
   return (
-    <section id="home" className="relative h-screen min-h-[560px] w-full overflow-hidden bg-zinc-950">
-      {/* 3D Interactive Background */}
+    <section id="home" className="relative h-screen min-h-[560px] w-full overflow-hidden">
+      {/* Local 3D cover (kept for hero fidelity). If global background is present, this layers seamlessly. */}
       <div className="absolute inset-0">
-        <Spline scene="https://prod.spline.design/hqXbe5uy0NxM7CDI/scene.splinecode" style={{ width: '100%', height: '100%' }} />
+        <Spline scene="https://prod.spline.design/Gt5HUob8aGDxOUep/scene.splinecode" style={{ width: '100%', height: '100%' }} />
       </div>
 
       {/* Content Overlay */}
       <div className="relative h-full z-10 pointer-events-none">
         {/* Gradients should not block Spline interactions */}
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(16,185,129,0.22),transparent_55%)]" />
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-zinc-950 via-zinc-950/40 to-transparent" />
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(16,185,129,0.18),transparent_55%)]" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black via-black/40 to-transparent" />
 
         <div className="mx-auto max-w-7xl px-6 h-full flex items-center">
           <div className="max-w-2xl text-white">

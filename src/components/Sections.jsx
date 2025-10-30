@@ -22,14 +22,17 @@ const processSteps = [
 
 function SectionWrapper({ id, title, subtitle, children }) {
   return (
-    <section id={id} className="relative py-20 bg-zinc-950 text-zinc-100">
-      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-      <div className="mx-auto max-w-7xl px-6">
+    <section id={id} className="relative py-20">
+      {/* Non-blocking ambient overlays for readability over the global Spline */}
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/40 via-black/10 to-transparent" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+
+      <div className="relative mx-auto max-w-7xl px-6 z-10">
         <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: '-100px' }} transition={{ duration: 0.5 }}>
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight">{title}</h2>
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">{title}</h2>
           {subtitle && <p className="mt-3 text-zinc-300 max-w-2xl">{subtitle}</p>}
         </motion.div>
-        <div className="mt-10">
+        <div className="mt-10 text-zinc-100">
           {children}
         </div>
       </div>
@@ -39,7 +42,7 @@ function SectionWrapper({ id, title, subtitle, children }) {
 
 export default function Sections() {
   return (
-    <div>
+    <div className="relative">
       <About />
       <Clients />
       <Services />

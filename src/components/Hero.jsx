@@ -1,0 +1,49 @@
+import Spline from '@splinetool/react-spline'
+import { motion } from 'framer-motion'
+
+export default function Hero() {
+  return (
+    <section id="home" className="relative h-[88vh] min-h-[560px] w-full overflow-hidden bg-zinc-950">
+      <div className="absolute inset-0">
+        <Spline scene="https://prod.spline.design/Gt5HUob8aGDxOUep/scene.splinecode" style={{ width: '100%', height: '100%' }} />
+      </div>
+
+      <div className="relative h-full z-10">
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(16,185,129,0.25),transparent_55%)]" />
+        <div className="mx-auto max-w-7xl px-6 h-full flex items-center">
+          <div className="max-w-2xl text-white">
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight"
+            >
+              Creative media that moves your brand forward
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.15, duration: 0.6 }}
+              className="mt-4 text-lg text-zinc-200"
+            >
+              NAK MEDIA is a full-stack creative studio crafting brand stories through design, film, and digital experiences.
+            </motion.p>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3, duration: 0.6 }}
+              className="mt-8 flex items-center gap-3"
+            >
+              <a href="#services" className="inline-flex items-center rounded-md bg-emerald-600 hover:bg-emerald-500 text-white px-5 py-3 font-semibold shadow-lg shadow-emerald-600/30 transition-colors">
+                Explore Services
+              </a>
+              <a href="#contact" className="inline-flex items-center rounded-md bg-white/10 hover:bg-white/20 text-white px-5 py-3 font-semibold backdrop-blur border border-white/10">
+                Get in touch
+              </a>
+            </motion.div>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
